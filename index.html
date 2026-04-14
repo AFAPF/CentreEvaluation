@@ -24,7 +24,6 @@
             padding: 20px;
         }
 
-        /* En-tête */
         header {
             text-align: center;
             padding: 40px 20px;
@@ -35,10 +34,12 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .logo {
-            font-size: 3.5em;
+        .app-icon {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+            filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.3));
             margin-bottom: 10px;
-            filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.5));
         }
 
         h1 {
@@ -54,7 +55,6 @@
             margin-bottom: 20px;
         }
 
-        /* Bouton de téléchargement principal */
         .download-btn {
             display: inline-block;
             background: linear-gradient(45deg, #27ae60, #2ecc71);
@@ -82,7 +82,6 @@
             margin-top: 10px;
         }
 
-        /* Cartes des modules */
         .modules-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -121,7 +120,6 @@
             line-height: 1.6;
         }
 
-        /* Section caractéristiques */
         .features {
             display: flex;
             flex-wrap: wrap;
@@ -143,7 +141,6 @@
             margin-bottom: 15px;
         }
 
-        /* Instructions */
         .instructions {
             background: rgba(15, 52, 96, 0.5);
             padding: 40px;
@@ -157,7 +154,7 @@
             margin-bottom: 20px;
         }
 
-        .instructions ol {
+        .instructions ol, .instructions ul {
             margin-left: 20px;
             line-height: 2;
         }
@@ -174,7 +171,15 @@
             color: #f1c40f;
         }
 
-        /* Pied de page */
+        .warning {
+            background: #e67e22;
+            color: #1a1a2e;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+
         footer {
             text-align: center;
             padding: 30px;
@@ -183,27 +188,18 @@
             margin-top: 50px;
         }
 
-        .badge {
-            display: inline-block;
-            background: #e74c3c;
-            color: white;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.8em;
-            margin-left: 10px;
+        .screenshot {
+            max-width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 2px solid #2c3e50;
+            margin: 20px 0;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2em;
-            }
-            .logo {
-                font-size: 2.5em;
-            }
+            h1 { font-size: 2em; }
         }
 
-        /* Animation légère */
         @keyframes float {
             0% { transform: translateY(0px); }
             50% { transform: translateY(-10px); }
@@ -217,18 +213,52 @@
 <body>
     <div class="container">
         <header>
-            <div class="logo floating">🎮 ⌨️ 🖱️</div>
+            <img src="icone.png" alt="Icône CEMSC" class="app-icon floating">
             <h1>Centre d'Évaluation</h1>
             <div class="tagline">Maîtrisez votre clavier et votre souris en vous amusant</div>
             <a href="./CEMSC.zip" class="download-btn" download>
                 ⬇️ Télécharger CEMSC.zip
             </a>
             <div class="version-info">Version 1.0 | Windows 10/11 | ~50 Mo</div>
-            <p style="margin-top: 25px; font-size: 1.1em;">
-                Cliquez sur le bouton ci-dessus pour télécharger directement l'exécutable.
-                <br><strong>Vous pouvez ensuite déplacer <span style="color:#ffd700;">CEMSC.exe</span> sur votre bureau</strong> et le lancer avec l'icône du programme.
-            </p>
         </header>
+
+        <!-- Instructions importantes -->
+        <div class="warning">
+            ⚠️ <strong>IMPORTANT :</strong> Après avoir téléchargé <span class="highlight">CEMSC.zip</span>, vous devez <u>décompresser</u> le dossier avant de pouvoir lancer le programme. Windows ne peut pas exécuter le raccourci directement depuis le fichier ZIP.
+        </div>
+
+        <!-- Capture d'écran -->
+        <div style="text-align: center; margin: 40px 0;">
+            <h2 style="color:#ffd700; margin-bottom:20px;">📸 Aperçu de l'accueil</h2>
+            <img src="acceuil.png" alt="Capture d'écran du Centre d'Évaluation" class="screenshot">
+        </div>
+
+        <!-- Instructions détaillées -->
+        <div class="instructions">
+            <h2>📥 Installation et lancement</h2>
+            <ol>
+                <li>Téléchargez le fichier <span class="highlight">CEMSC.zip</span> via le bouton ci-dessus.</li>
+                <li><strong>Décompressez</strong> l'archive : faites un clic droit sur <span class="highlight">CEMSC.zip</span> → "Extraire tout..." (ou utilisez 7-Zip / WinRAR).</li>
+                <li>Ouvrez le dossier <span class="highlight">CentreEvaluation</span> obtenu.</li>
+                <li>Vous y trouverez deux fichiers :
+                    <ul style="margin-top:10px;">
+                        <li><span class="highlight">CEMSC.exe</span> – l'exécutable du programme</li>
+                        <li><span class="highlight">CEMSC.exe - Raccourci</span> – un raccourci avec l'icône</li>
+                    </ul>
+                </li>
+                <li>Double-cliquez sur <span class="highlight">CEMSC.exe</span> (ou sur le raccourci) pour lancer le programme.</li>
+                <li>Si Windows Defender affiche un avertissement, cliquez sur <strong>"Informations complémentaires"</strong> puis <strong>"Exécuter quand même"</strong> (le logiciel est sûr).</li>
+            </ol>
+
+            <h3 style="margin-top:30px; color:#ffd700;">💡 Astuce : épingler sur le Bureau</h3>
+            <p>Vous pouvez <strong>déplacer le raccourci</strong> (<span class="highlight">CEMSC.exe - Raccourci</span>) sur votre Bureau. L'icône restera affichée correctement et vous pourrez lancer le programme en un clic.</p>
+            <p>Si vous préférez, faites un clic droit sur <span class="highlight">CEMSC.exe</span> → <strong>Envoyer vers</strong> → <strong>Bureau (créer un raccourci)</strong>. Le résultat est identique.</p>
+
+            <h3 style="margin-top:30px; color:#ffd700;">📁 Où sont sauvegardées mes données ?</h3>
+            <p>Les profils, scores et statistiques sont automatiquement enregistrés dans le dossier :<br>
+            <span class="highlight">%LOCALAPPDATA%\CentreEvaluation</span><br>
+            (accessible en copiant ce chemin dans l'explorateur de fichiers). Vous pouvez donc déplacer le programme ou le raccourci sans perdre votre progression.</p>
+        </div>
 
         <!-- Modules du programme -->
         <h2 style="text-align:center; color:#ffd700; margin: 40px 0;">🎯 Modules d'entraînement</h2>
@@ -276,40 +306,6 @@
                 <div class="feature-icon">🎨</div>
                 <h4>Interface moderne</h4>
                 <p>Design sombre, animations fluides et mode plein écran (F11).</p>
-            </div>
-        </div>
-
-        <!-- Instructions d'installation -->
-        <div class="instructions">
-            <h2>📥 Installation et utilisation</h2>
-            <ol>
-                <li>Téléchargez le fichier <span class="highlight">CEMSC.exe</span> via le bouton ci-dessus.</li>
-                <li>Une fois téléchargé, vous pouvez le <strong>déplacer sur votre bureau</strong> pour un accès facile.</li>
-                <li>Double-cliquez sur <span class="highlight">CEMSC.exe</span> pour lancer le programme.</li>
-                <li>Si Windows Defender affiche un avertissement, cliquez sur <strong>"Informations complémentaires"</strong> puis <strong>"Exécuter quand même"</strong> (le logiciel est sûr).</li>
-                <li>Créez votre profil et commencez à vous entraîner !</li>
-            </ol>
-            <p style="margin-top: 20px; background: #2c3e50; padding: 15px; border-radius: 10px;">
-                💡 <strong>Astuce :</strong> Le programme enregistre automatiquement vos progrès dans le dossier <span class="highlight">%LOCALAPPDATA%\CentreEvaluation</span>. Vous pouvez donc déplacer l'exécutable où vous voulez sans perdre vos données.
-            </p>
-        </div>
-
-        <!-- Section : pourquoi ce logiciel -->
-        <div style="background: rgba(0,0,0,0.2); padding: 40px; border-radius: 20px; margin: 50px 0;">
-            <h2 style="color:#ffd700; margin-bottom:20px;">🎓 Pourquoi utiliser ce programme ?</h2>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-                <div>
-                    <h3 style="color:#3498db;">👶 Débutants</h3>
-                    <p>Apprenez à utiliser la souris et le clavier en douceur avec des exercices guidés et progressifs.</p>
-                </div>
-                <div>
-                    <h3 style="color:#2ecc71;">⚡ Utilisateurs avancés</h3>
-                    <p>Améliorez votre rapidité de frappe (WPM) et votre précision de clic grâce aux modes challenge.</p>
-                </div>
-                <div>
-                    <h3 style="color:#e67e22;">🧑‍🏫 Éducation / Rééducation</h3>
-                    <p>Idéal pour les établissements scolaires, les centres de formation ou la rééducation fonctionnelle.</p>
-                </div>
             </div>
         </div>
 
