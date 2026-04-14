@@ -1,1 +1,335 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centre d'Évaluation - Maîtrise Souris & Clavier</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #ecf0f1;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* En-tête */
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+            margin: 20px 0;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.5));
+        }
+
+        h1 {
+            color: #ffd700;
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .tagline {
+            font-size: 1.3em;
+            color: #bdc3c7;
+            margin-bottom: 20px;
+        }
+
+        /* Bouton de téléchargement principal */
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #27ae60, #2ecc71);
+            color: white;
+            padding: 18px 40px;
+            font-size: 1.4em;
+            font-weight: bold;
+            border-radius: 50px;
+            text-decoration: none;
+            margin: 20px 0;
+            box-shadow: 0 8px 20px rgba(46, 204, 113, 0.4);
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(46, 204, 113, 0.6);
+            background: linear-gradient(45deg, #219a52, #27ae60);
+        }
+
+        .version-info {
+            font-size: 0.9em;
+            color: #95a5a6;
+            margin-top: 10px;
+        }
+
+        /* Cartes des modules */
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 50px 0;
+        }
+
+        .module-card {
+            background: rgba(44, 62, 80, 0.7);
+            backdrop-filter: blur(5px);
+            border-radius: 15px;
+            padding: 30px 20px;
+            text-align: center;
+            transition: transform 0.3s;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .module-card:hover {
+            transform: translateY(-5px);
+            background: rgba(52, 73, 94, 0.8);
+        }
+
+        .module-icon {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+        }
+
+        .module-card h3 {
+            color: #ffd700;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .module-card p {
+            color: #ecf0f1;
+            line-height: 1.6;
+        }
+
+        /* Section caractéristiques */
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            margin: 50px 0;
+            background: rgba(0,0,0,0.2);
+            padding: 40px;
+            border-radius: 20px;
+        }
+
+        .feature-item {
+            text-align: center;
+            max-width: 200px;
+        }
+
+        .feature-icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+
+        /* Instructions */
+        .instructions {
+            background: rgba(15, 52, 96, 0.5);
+            padding: 40px;
+            border-radius: 20px;
+            margin: 50px 0;
+            border-left: 5px solid #ffd700;
+        }
+
+        .instructions h2 {
+            color: #ffd700;
+            margin-bottom: 20px;
+        }
+
+        .instructions ol {
+            margin-left: 20px;
+            line-height: 2;
+        }
+
+        .instructions li {
+            margin-bottom: 10px;
+        }
+
+        .highlight {
+            background: #2c3e50;
+            padding: 2px 8px;
+            border-radius: 5px;
+            font-family: monospace;
+            color: #f1c40f;
+        }
+
+        /* Pied de page */
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #7f8c8d;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 50px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #e74c3c;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            margin-left: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+            .logo {
+                font-size: 2.5em;
+            }
+        }
+
+        /* Animation légère */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .floating {
+            animation: float 4s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo floating">🎮 ⌨️ 🖱️</div>
+            <h1>Centre d'Évaluation</h1>
+            <div class="tagline">Maîtrisez votre clavier et votre souris en vous amusant</div>
+            <a href="./CEMSC.exe" class="download-btn" download>
+                ⬇️ Télécharger CEMSC.exe
+            </a>
+            <div class="version-info">Version 1.0 | Windows 10/11 | ~50 Mo</div>
+            <p style="margin-top: 25px; font-size: 1.1em;">
+                Cliquez sur le bouton ci-dessus pour télécharger directement l'exécutable.
+                <br><strong>Vous pouvez ensuite déplacer <span style="color:#ffd700;">CEMSC.exe</span> sur votre bureau</strong> et le lancer avec l'icône du programme.
+            </p>
+        </header>
+
+        <!-- Modules du programme -->
+        <h2 style="text-align:center; color:#ffd700; margin: 40px 0;">🎯 Modules d'entraînement</h2>
+        <div class="modules-grid">
+            <div class="module-card">
+                <div class="module-icon">🖱️</div>
+                <h3>Speed Click</h3>
+                <p>Testez votre rapidité et précision avec des cibles de taille décroissante. Clics gauche/droite, combo et bonus de rapidité.</p>
+            </div>
+            <div class="module-card">
+                <div class="module-icon">⌨️</div>
+                <h3>Keyboard Master</h3>
+                <p>Apprenez à taper rapidement sur tout le clavier : alphabet, accents, ponctuation, raccourcis et mode All Stars.</p>
+            </div>
+            <div class="module-card">
+                <div class="module-icon">🐭</div>
+                <h3>Atelier Souris</h3>
+                <p>Exercices progressifs : clic gauche, clic droit, double-clic et glisser-déposer. Parfait pour débutants.</p>
+            </div>
+            <div class="module-card">
+                <div class="module-icon">📝</div>
+                <h3>Dactylo</h3>
+                <p>Entraînez-vous à taper du texte avec la célèbre fable de La Fontaine. WPM, précision et analyse des erreurs.</p>
+            </div>
+        </div>
+
+        <!-- Caractéristiques -->
+        <div class="features">
+            <div class="feature-item">
+                <div class="feature-icon">👤</div>
+                <h4>Profils multiples</h4>
+                <p>Créez plusieurs profils et suivez la progression de chacun.</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🏆</div>
+                <h4>Succès & Badges</h4>
+                <p>Débloquez des succès et gagnez des badges pour vos performances.</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">📊</div>
+                <h4>Statistiques avancées</h4>
+                <p>Heatmap du clavier, précision, WPM et classement général.</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🎨</div>
+                <h4>Interface moderne</h4>
+                <p>Design sombre, animations fluides et mode plein écran (F11).</p>
+            </div>
+        </div>
+
+        <!-- Instructions d'installation -->
+        <div class="instructions">
+            <h2>📥 Installation et utilisation</h2>
+            <ol>
+                <li>Téléchargez le fichier <span class="highlight">CEMSC.exe</span> via le bouton ci-dessus.</li>
+                <li>Une fois téléchargé, vous pouvez le <strong>déplacer sur votre bureau</strong> pour un accès facile.</li>
+                <li>Double-cliquez sur <span class="highlight">CEMSC.exe</span> pour lancer le programme.</li>
+                <li>Si Windows Defender affiche un avertissement, cliquez sur <strong>"Informations complémentaires"</strong> puis <strong>"Exécuter quand même"</strong> (le logiciel est sûr).</li>
+                <li>Créez votre profil et commencez à vous entraîner !</li>
+            </ol>
+            <p style="margin-top: 20px; background: #2c3e50; padding: 15px; border-radius: 10px;">
+                💡 <strong>Astuce :</strong> Le programme enregistre automatiquement vos progrès dans le dossier <span class="highlight">%LOCALAPPDATA%\CentreEvaluation</span>. Vous pouvez donc déplacer l'exécutable où vous voulez sans perdre vos données.
+            </p>
+        </div>
+
+        <!-- Section : pourquoi ce logiciel -->
+        <div style="background: rgba(0,0,0,0.2); padding: 40px; border-radius: 20px; margin: 50px 0;">
+            <h2 style="color:#ffd700; margin-bottom:20px;">🎓 Pourquoi utiliser ce programme ?</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                <div>
+                    <h3 style="color:#3498db;">👶 Débutants</h3>
+                    <p>Apprenez à utiliser la souris et le clavier en douceur avec des exercices guidés et progressifs.</p>
+                </div>
+                <div>
+                    <h3 style="color:#2ecc71;">⚡ Utilisateurs avancés</h3>
+                    <p>Améliorez votre rapidité de frappe (WPM) et votre précision de clic grâce aux modes challenge.</p>
+                </div>
+                <div>
+                    <h3 style="color:#e67e22;">🧑‍🏫 Éducation / Rééducation</h3>
+                    <p>Idéal pour les établissements scolaires, les centres de formation ou la rééducation fonctionnelle.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Configuration requise -->
+        <div style="text-align: center; margin: 40px 0; padding: 20px; background: rgba(0,0,0,0.2); border-radius: 15px;">
+            <h3 style="color:#ffd700;">💻 Configuration minimale</h3>
+            <p>Windows 10 ou 11 • 2 Go RAM • Résolution 1024x768 • Aucune installation requise</p>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>© 2026 - Arnaud Fourcade - Pôle d'Appui à la scolarité - MPA</p>
+            <p style="margin-top: 15px;">
+                <a href="https://github.com/afapf/CentreEvaluation" style="color: #3498db; text-decoration: none;">GitHub</a> |
+                <a href="#" style="color: #3498db; text-decoration: none;">Signaler un bug</a>
+            </p>
+            <p style="margin-top: 20px; font-size: 0.9em;">
+                Programme portable - Téléchargement direct - Version 1.0.0
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
