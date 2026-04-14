@@ -1,0 +1,32 @@
+[
+  {
+    "module": "Speed Click",
+    "score": 123565,
+    "niveau": 7,
+    "combo": 59,
+    "joueur": "Joueur",
+    "date": "14/04/2026 11:09",
+    "details": {}
+  },
+  {
+    "module": "Speed Click",
+    "score": 71304,
+    "niveau": 5,
+    "combo": 46,
+    "joueur": "Joueur",
+    "date": "14/04/2026 10:59",
+    "details": {}
+  },
+  {
+    "module": "Dactylo",
+    "score": 2300,
+    "niveau": 1,
+    "combo": 0,
+    "joueur": "Joueur",
+    "date": "14/04/2026 11:05",
+    "details": {
+      "wpm": 23,
+      "precision": 100.0
+    }
+  }
+]
