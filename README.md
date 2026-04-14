@@ -9,7 +9,7 @@ Destiné aux débutants comme aux utilisateurs avancés, il propose 4 modules d'
 
 ## 📥 Téléchargement
 
-👉 **[Télécharger CEMSC.zip](../../releases/latest/download/CEMSC.zip)** (lien direct)
+👉 **[Télécharger CEMSC.zip](https://github.com/afapf/CentreEvaluation/releases/download/v1.0.0/CEMSC.zip)** (lien direct)
 
 > **IMPORTANT :** Après avoir téléchargé le fichier ZIP, vous devez **le décompresser** avant utilisation.  
 > Windows ne peut pas lancer le raccourci directement depuis l'archive.
